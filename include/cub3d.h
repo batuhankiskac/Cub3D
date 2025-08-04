@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/02 21:33:49 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/04 13:50:20 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,9 @@ typedef struct	s_cub3d
 	void	*mlx;
 	void	*win;
 }			t_cub3d;
+
+char	**get_swords(char **words, char *word);
+void	free_all(char **arr);
+char	**get_file_data(char *filename);
 
 #endif
