@@ -6,7 +6,7 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 06:35:11 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/04 13:50:06 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/04 13:56:51 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	is_extension_true(char *filename)
 			&& !(filename[size - 5] == ' '))
 			return (1);
 	}
-	ft_putstr_fd("cub3D: map file is wrong.\n", 2);
+	ft_putstr_fd("Error\ncub3D: map file is wrong.\n", 2);
 	return (0);
 }
 
@@ -40,20 +40,20 @@ static int	open_file(char *filename)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
-		perror("cub3D");
+		perror("Error\ncub3D");
 		return (-1);
 	}
 	readed = read(fd, &buffer, 1);
 	close(fd);
 	if (readed != 1)
 	{
-		ft_putstr_fd("cub3D: no map found.\n", 2);
+		ft_putstr_fd("Error\ncub3D: no map found.\n", 2);
 		return (-1);
 	}
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
-		perror("cub3D");
+		perror("Error\ncub3D");
 		return (-1);
 	}
 	return (fd);
