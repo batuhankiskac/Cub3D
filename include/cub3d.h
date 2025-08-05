@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/05 18:11:16 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/05 19:28:16 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_img
 	int		endian;
 }	t_img;
 
-typedef struct	s_map
+typedef struct s_map
 {
 	char	**grid;
 	char	*north_texture_path;
@@ -49,8 +49,7 @@ typedef struct	s_map
 	int		map_height;
 }			t_map;
 
-
-typedef struct	s_cub3d
+typedef struct s_cub3d
 {
 	void	*mlx;
 	void	*win;
