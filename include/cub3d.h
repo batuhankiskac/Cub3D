@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/04 13:50:20 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/05 18:01:38 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
+
+# define ERROR -2
 
 # include "../libft/libft.h"
 # include "../mlx/mlx.h"
