@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/06 14:11:36 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/06 14:51:43 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,11 @@ int		init_data(t_cub3d *cub3d);
 int		init_mlx(t_cub3d *cub3d);
 
 /*
+** Validate
+*/
+int		validate_map_grid(t_map *map);
+
+/*
 ** Parser
 */
 int		parse_file(t_cub3d *cub3d, char *filename);
@@ -74,5 +79,6 @@ char	**get_file_data(char *filename);
 ** Utils
 */
 void	free_all(char **arr);
+int		print_error(char *message, int error_code);
 
 #endif
