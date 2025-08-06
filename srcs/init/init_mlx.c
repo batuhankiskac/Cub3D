@@ -6,11 +6,11 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 18:17:23 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/05 19:13:46 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/06 14:09:24 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "cub3d.h"
 
 static int	init_error(void)
 {

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data_init.c                                        :+:      :+:    :+:   */
+/*   parse_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 18:14:35 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/06 14:09:19 by bkiskac          ###   ########.fr       */
+/*   Created: 2025/08/06 14:08:50 by bkiskac           #+#    #+#             */
+/*   Updated: 2025/08/06 14:10:30 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	init_data(t_cub3d *cub3d)
+int	parse_file(t_cub3d *cub3d, char *filename)
 {
-	cub3d->mlx = NULL;
-	cub3d->win = NULL;
-	cub3d->img.img_ptr = NULL;
-	cub3d->map.grid = NULL;
-	cub3d->map.north_texture_path = NULL;
-	cub3d->map.south_texture_path = NULL;
-	cub3d->map.west_texture_path = NULL;
-	cub3d->map.east_texture_path = NULL;
-	cub3d->map.floor_color = -1;
-	cub3d->map.ceiling_color = -1;
+	cub3d->map.grid = get_file_data(filename);
+	if (!cub3d->map.grid)
+	{
+		ft_putstr_fd("Error: Could not read file.\n", STDERR_FILENO);
+		return (ERROR);
+	}
+	// map structının içeriğini dolduran fonksiyon
+	// devamı yazılacak...
 	return (0);
 }
