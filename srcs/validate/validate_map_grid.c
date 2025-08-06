@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 14:28:06 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/06 14:47:43 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/06 15:44:56 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	is_map_closed(t_map *map)
 				if (y == 0 || (int)ft_strlen(map->grid[y - 1]) <= x
 					|| map->grid[y - 1][x] == ' ')
 					return (print_error("Map is not closed", ERROR));
-				if (map->grid[y + 1] == NULL || (int)ft_strlen(map->grid[y + 1]) <= x
+				if (!map->grid[y + 1] || (int)ft_strlen(map->grid[y + 1]) <= x
 					|| map->grid[y + 1][x] == ' ')
 					return (print_error("Map is not closed", ERROR));
 				if (x == 0 || map->grid[y][x - 1] == ' ')
