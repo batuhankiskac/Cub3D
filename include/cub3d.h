@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/06 15:53:52 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/08 18:38:19 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ char	**get_file_data(char *filename);
 ** Utils
 */
 int		print_error(char *message, int error_code);
+void	*print_null(char *message);
 void	free_all(char **arr);
 
 #endif
