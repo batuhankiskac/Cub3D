@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 14:24:35 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/06 15:52:01 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/09 16:27:13 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int	validate_map(t_map *map)
 		return (ERROR);
 	if (validate_elements(map) == ERROR)
 		return (ERROR);
+	return (0);
 }
