@@ -5,37 +5,65 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -I include -g
 
 LIBFT_DIR = ./libft
-LIBFT = $(LIBFT_DIR)/libft.a
+LIBFT_A = $(LIBFT_DIR)/libft.a
 
-MLX_FLAGS = -lmlx -lXext -lX11 -lm -lz
+MLX_DIR = ./mlx
+MLX_A = $(MLX_DIR)/libmlx.a
 
-SRCS = src/main/main.c
+LIBS = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx
+
+MLX_SYSTEM_LIBS = -lXext -lX11 -lm -lz
+
+SRCS = srcs/main.c \
+	srcs/init/data_init.c \
+	srcs/init/delete.c \
+	srcs/init/init_mlx.c \
+	srcs/parsing/fill_t_map.c \
+	srcs/parsing/get_file_data.c \
+	srcs/parsing/get_swords.c \
+	srcs/parsing/parse_file.c \
+	srcs/utils/free_all.c \
+	srcs/utils/get_color.c \
+	srcs/utils/print_error.c \
+	srcs/validate/validate_elements.c \
+	srcs/validate/validate_map.c \
+	srcs/validate/validate_map_grid.c
 
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
+$(NAME): $(OBJS) $(LIBFT_A) $(MLX_A)
+	@echo "Linking $(NAME)..."
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBS) $(MLX_SYSTEM_LIBS)
+
+$(LIBFT_A):
+	@echo "Building libft..."
+	@$(MAKE) -C $(LIBFT_DIR)
+
+$(MLX_A):
+	@echo "Building MiniLibX..."
+	@$(MAKE) -C $(MLX_DIR)
+
 %.o: %.c
 	@echo "Compiling $<"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS) $(LIBFT)
-	@echo "Linking $(NAME)..."
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX_FLAGS) -L$(LIBFT_DIR) -lft
-
-$(LIBFT):
-	@echo "Building libft..."
-	@$(MAKE) -C $(LIBFT_DIR)
-
 clean:
-	@echo "Cleaning objects..."
+	@echo "Cleaning project objects..."
 	@rm -f $(OBJS)
+	@echo "Cleaning libft..."
 	@$(MAKE) -C $(LIBFT_DIR) clean
+	@echo "Cleaning MiniLibX..."
+	@$(MAKE) -C $(MLX_DIR) clean
 
 fclean: clean
 	@echo "Removing executable..."
 	@rm -f $(NAME)
+	@echo "Fcleaning libft..."
 	@$(MAKE) -C $(LIBFT_DIR) fclean
+	# MLX'in kendi 'clean' kuralı zaten libmlx.a'yı siliyor,
+	# bu yüzden fclean için ek bir komuta gerek yok.
 
 re: fclean all
 

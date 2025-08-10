@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 18:17:23 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/06 14:24:00 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/10 18:54:36 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ int	init_mlx(t_cub3d *cub3d)
 			&cub3d->img.bpp, &cub3d->img.line_len, &cub3d->img.endian);
 	if (!cub3d->img.addr)
 		return (print_error("Failed to initialize mlx", ERROR));
+	return (0);
 }

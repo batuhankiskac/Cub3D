@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_file.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/06 14:08:50 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/10 18:54:52 by bkiskac          ###   ########.fr       */
+/*   Created: 2025/08/10 18:53:40 by bkiskac           #+#    #+#             */
+/*   Updated: 2025/08/10 18:55:30 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	parse_file(t_cub3d *cub3d, char *filename)
+int main(int argc, char const *argv[])
 {
-	(void)filename;
-	// map structının içeriğini dolduran fonksiyon
-	// devamı yazılacak...
-
-	// validate map örnek kullanım
-	if (validate_map(&cub3d->map) == ERROR)
-	{
-		free_all(cub3d->map.grid);
-		return (ERROR);
-	}
+	(void)argc;
+	(void)argv;
 	return (0);
 }

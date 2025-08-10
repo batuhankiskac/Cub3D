@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/10 15:38:04 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/10 18:46:06 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ t_map	*get_filled_t_map(char *filename);
 ** Utils
 */
 int		print_error(char *message, int error_code);
+int		get_color_from_rgb(char *rgb_str);
 void	*print_null(char *message);
 void	free_all(char **arr);
 
