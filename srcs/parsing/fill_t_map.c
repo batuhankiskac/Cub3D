@@ -6,7 +6,7 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 07:14:27 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/10 15:29:50 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/10 15:41:05 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ static void	fill(t_map *map, char **data)
 	{
 		if (ft_strnstr(data[i], "NO", ft_strlen(data[i])))
 			map->north_texture_path = ft_strdup(ft_strnstr(data[i], "NO",
-											ft_strlen(data[i])));
+						ft_strlen(data[i])));
 		else if (ft_strnstr(data[i], "SO", ft_strlen(data[i])))
 			map->south_texture_path = ft_strdup(ft_strnstr(data[i], "SO",
-											ft_strlen(data[i])));
+						ft_strlen(data[i])));
 		else if (ft_strnstr(data[i], "WE", ft_strlen(data[i])))
 			map->west_texture_path = ft_strdup(ft_strnstr(data[i], "WE",
-											ft_strlen(data[i])));
+						ft_strlen(data[i])));
 		else if (ft_strnstr(data[i], "EA", ft_strlen(data[i])))
 			map->east_texture_path = ft_strdup(ft_strnstr(data[i], "EA",
-											ft_strlen(data[i])));
+						ft_strlen(data[i])));
 		i++;
 	}
 }
