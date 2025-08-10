@@ -57,3 +57,5 @@ dkms.conf
 # raydogmu's files
 .vscode
 cub3D
+srcs/main/*
+.gitignore
