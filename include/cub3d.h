@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/06 15:53:52 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/07 07:50:09 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,13 @@ typedef struct s_cub3d
 */
 int		init_data(t_cub3d *cub3d);
 int		init_mlx(t_cub3d *cub3d);
+t_map	*get_initialized_map(void);
+
+/*
+** Delete
+*/
+
+void	free_t_map(t_map *map);
 
 /*
 ** Validate
@@ -76,6 +83,7 @@ int		validate_map(t_map *map);
 int		parse_file(t_cub3d *cub3d, char *filename);
 char	**get_swords(char **words, char *word);
 char	**get_file_data(char *filename);
+t_map	*get_filled_t_map(char *filename);
 
 /*
 ** Utils
