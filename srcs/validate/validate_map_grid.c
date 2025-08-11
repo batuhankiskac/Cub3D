@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 14:28:06 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/11 14:26:00 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/11 14:27:18 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	check_content(t_map *map)
 	return (0);
 }
 
-static void		find_player_start(char **grid, int *x, int *y)
+static void	find_player_start(char **grid, int *x, int *y)
 {
 	*y = 0;
 	while (grid[*y])
