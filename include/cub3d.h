@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/10 18:46:06 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/11 06:46:18 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ int		parse_file(t_cub3d *cub3d, char *filename);
 char	**get_swords(char **words, char *word);
 char	**get_file_data(char *filename);
 t_map	*get_filled_t_map(char *filename);
+void	set_rgb_and_heights(t_map *map, char **data);
 
 /*
 ** Utils

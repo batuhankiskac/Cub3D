@@ -6,7 +6,7 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 06:35:11 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/04 13:56:51 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/11 07:44:19 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	open_file(char *filename)
 	close(fd);
 	if (readed != 1)
 	{
-		ft_putstr_fd("Error\ncub3D: no map found.\n", 2);
+		ft_putstr_fd("Error\ncub3D: File is empty.\n", 2);
 		return (-1);
 	}
 	fd = open(filename, O_RDONLY);
@@ -59,15 +59,13 @@ static int	open_file(char *filename)
 	return (fd);
 }
 
-static char	**get_data(char *filename)
+static char	**get_data(int fd)
 {
-	int		fd;
 	char	**data;
 	char	*line;
 
 	data = NULL;
 	line = NULL;
-	fd = open_file(filename);
 	if (fd == -1)
 		return (NULL);
 	while (1)
@@ -80,7 +78,6 @@ static char	**get_data(char *filename)
 		if (!data)
 			break ;
 	}
-	close(fd);
 	return (data);
 }
 
@@ -96,8 +93,7 @@ char	**get_file_data(char *filename)
 	fd = open_file(filename);
 	if (fd == -1)
 		return (NULL);
-	data = get_data(filename);
-	if (!data)
-		return (NULL);
+	data = get_data(fd);
+	close(fd);
 	return (data);
 }

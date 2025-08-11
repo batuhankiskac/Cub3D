@@ -6,7 +6,7 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 07:14:27 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/10 15:41:05 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/11 07:44:56 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,25 +35,30 @@ static void	fill(t_map *map, char **data)
 	}
 }
 
-static void	trim_blanks(t_map *map)
+static void	set_trimmed_ways(t_map *map)
 {
-	char	*temp;
+	char	*line;
 
-	if (!map->north_texture_path || !map->south_texture_path
-		|| !map->east_texture_path || !map->west_texture_path)
-		return ;
-	temp = ft_strtrim(map->north_texture_path, " \n\t\v\f\r");
+	line = NULL;
+	if (map->north_texture_path)
+		line = ft_strtrim(map->north_texture_path, "NO \n\f\v\r\t");
 	free(map->north_texture_path);
-	map->north_texture_path = temp;
-	temp = ft_strtrim(map->south_texture_path, " \n\t\v\f\r");
+	map->north_texture_path = line;
+	line = NULL;
+	if (map->south_texture_path)
+		line = ft_strtrim(map->south_texture_path, "SO \n\f\v\r\t");
 	free(map->south_texture_path);
-	map->south_texture_path = temp;
-	temp = ft_strtrim(map->east_texture_path, " \n\t\v\f\r");
-	free(map->east_texture_path);
-	map->east_texture_path = temp;
-	temp = ft_strtrim(map->west_texture_path, " \n\t\v\f\r");
+	map->south_texture_path = line;
+	line = NULL;
+	if (map->west_texture_path)
+		line = ft_strtrim(map->west_texture_path, "WE \n\f\v\r\t");
 	free(map->west_texture_path);
-	map->west_texture_path = temp;
+	map->west_texture_path = line;
+	line = NULL;
+	if (map->east_texture_path)
+		line = ft_strtrim(map->east_texture_path, "EA \n\f\v\r\t");
+	free(map->east_texture_path);
+	map->east_texture_path = line;
 }
 
 static char	**get_trimmed_map(char **map)
@@ -108,6 +113,8 @@ static void	add_map(t_map *map, char **data)
 		i++;
 	}
 	map->grid = get_trimmed_map(result);
+	if (!map->grid)
+		print_null("No map in .cub file.");
 	free_all(result);
 }
 
@@ -118,23 +125,24 @@ t_map	*get_filled_t_map(char *filename)
 
 	map = get_initialized_map();
 	if (!map)
-		return (NULL);
+		return (print_null("Memory error"));
 	data = get_file_data(filename);
 	if (!data)
 	{
 		free(map);
-		return (NULL);
+		return (print_null("No .cub file or file could not read"));
 	}
 	fill(map, data);
-	trim_blanks(map);
+	set_trimmed_ways(map);
 	add_map(map, data);
+	set_rgb_and_heights(map, data);
 	free_all(data);
 	if (map->ceiling_color == -1 || map->floor_color == -1
 		|| !map->north_texture_path || !map->south_texture_path
 		|| !map->east_texture_path || !map->west_texture_path || !map->grid)
 	{
 		free_t_map(map);
-		return (NULL);
+		return (print_null("Some identifiers not found."));
 	}
 	return (map);
 }
