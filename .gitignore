@@ -63,3 +63,6 @@ srcs/main/*
 # Makefile.gen files
 Makefile.gen
 *.Makefile.gen
+
+# Mlx Tests
+mlx/test/*

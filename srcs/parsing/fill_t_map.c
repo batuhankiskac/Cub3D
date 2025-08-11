@@ -6,7 +6,7 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 07:14:27 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/11 07:44:56 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/11 08:57:38 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ static void	fill(t_map *map, char **data)
 	{
 		if (ft_strnstr(data[i], "NO", ft_strlen(data[i])))
 			map->north_texture_path = ft_strdup(ft_strnstr(data[i], "NO",
-						ft_strlen(data[i])));
+						ft_strlen(data[i])) + 2);
 		else if (ft_strnstr(data[i], "SO", ft_strlen(data[i])))
 			map->south_texture_path = ft_strdup(ft_strnstr(data[i], "SO",
-						ft_strlen(data[i])));
+						ft_strlen(data[i])) + 2);
 		else if (ft_strnstr(data[i], "WE", ft_strlen(data[i])))
 			map->west_texture_path = ft_strdup(ft_strnstr(data[i], "WE",
-						ft_strlen(data[i])));
+						ft_strlen(data[i])) + 2);
 		else if (ft_strnstr(data[i], "EA", ft_strlen(data[i])))
 			map->east_texture_path = ft_strdup(ft_strnstr(data[i], "EA",
-						ft_strlen(data[i])));
+						ft_strlen(data[i])) + 2);
 		i++;
 	}
 }
@@ -41,22 +41,22 @@ static void	set_trimmed_ways(t_map *map)
 
 	line = NULL;
 	if (map->north_texture_path)
-		line = ft_strtrim(map->north_texture_path, "NO \n\f\v\r\t");
+		line = ft_strtrim(map->north_texture_path, " \n\f\v\r\t");
 	free(map->north_texture_path);
 	map->north_texture_path = line;
 	line = NULL;
 	if (map->south_texture_path)
-		line = ft_strtrim(map->south_texture_path, "SO \n\f\v\r\t");
+		line = ft_strtrim(map->south_texture_path, " \n\f\v\r\t");
 	free(map->south_texture_path);
 	map->south_texture_path = line;
 	line = NULL;
 	if (map->west_texture_path)
-		line = ft_strtrim(map->west_texture_path, "WE \n\f\v\r\t");
+		line = ft_strtrim(map->west_texture_path, " \n\f\v\r\t");
 	free(map->west_texture_path);
 	map->west_texture_path = line;
 	line = NULL;
 	if (map->east_texture_path)
-		line = ft_strtrim(map->east_texture_path, "EA \n\f\v\r\t");
+		line = ft_strtrim(map->east_texture_path, " \n\f\v\r\t");
 	free(map->east_texture_path);
 	map->east_texture_path = line;
 }
