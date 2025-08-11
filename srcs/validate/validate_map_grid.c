@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 14:28:06 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/11 14:21:15 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/11 14:26:00 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,9 @@ static int	execute_fill(t_map *map)
 	}
 	map_copy[player_y] = NULL;
 	find_player_start(map_copy, &player_x, &player_y);
-	result = flood_fill()
+	result = flood_fill(map_copy, player_y, player_x, map->map_height);
+	free_all(map_copy);
+	return (result);
 }
 
 int	validate_map_grid(t_map *map)
