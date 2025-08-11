@@ -6,7 +6,7 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 07:14:27 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/11 08:57:38 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/11 10:58:56 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ static char	**get_trimmed_map(char **map)
 
 	result = NULL;
 	i = 0;
+	if (!map || !map[0])
+		return (NULL);
 	while (map[i])
 	{
 		line = ft_strtrim(map[i], "\n\t\v\f\r");
@@ -78,12 +80,9 @@ static char	**get_trimmed_map(char **map)
 			return (NULL);
 		}
 		result = get_swords(result, line);
-		if (!result)
-		{
-			free(line);
-			return (NULL);
-		}
 		free(line);
+		if (!result)
+			return (NULL);
 		i++;
 	}
 	return (result);
