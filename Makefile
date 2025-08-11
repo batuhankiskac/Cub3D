@@ -21,7 +21,6 @@ SRCS = srcs/main.c \
 	srcs/parsing/fill_t_map.c \
 	srcs/parsing/get_file_data.c \
 	srcs/parsing/get_swords.c \
-	srcs/parsing/parse_file.c \
 	srcs/parsing/set_rgb_and_heights.c \
 	srcs/utils/free_all.c \
 	srcs/utils/get_color.c \
