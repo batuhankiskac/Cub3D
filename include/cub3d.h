@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/12 15:10:22 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/12 17:49:34 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,8 @@ void	set_rgb_and_heights(t_map *map, char **data);
 */
 int		print_error(char *message, int error_code);
 int		get_color_from_rgb(char *rgb_str);
+int		cleanup(t_cub3d *cub3d);
+int		cleanup_and_exit(t_cub3d *cub3d);
 void	*print_null(char *message);
 void	free_all(char **arr);
 
