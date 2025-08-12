@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/11 13:24:01 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/12 15:10:22 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "../libft/libft.h"
 # include "../mlx/mlx.h"
+# include <X11/X.h>
+# include <X11/keysym.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
@@ -49,12 +51,28 @@ typedef struct s_map
 	int		map_height;
 }			t_map;
 
+typedef struct s_player
+{
+	double	pos_x;
+	double	pos_y;
+	double	dir_x;
+	double	dir_y;
+	double	plane_x;
+	double	plane_y;
+}			t_player;
+
+typedef struct s_ray
+{
+	// raycast kısmı için struct
+}			t_ray;
+
 typedef struct s_cub3d
 {
-	void	*mlx;
-	void	*win;
-	t_img	img;
-	t_map	map;
+	void		*mlx;
+	void		*win;
+	t_img		img;
+	t_map		map;
+	t_player	player;
 }			t_cub3d;
 
 /*

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_rgb_and_heights.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 06:46:42 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/11 07:39:09 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/12 14:39:16 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	set_rgb_and_heights(t_map *map, char **data)
 	if (!map | !data)
 		return ;
 	set_map_height(map);
-	set_map_width(map);						
+	set_map_width(map);
 	map->floor_color = get_rgb_val(data, " \n\f\v\r\t. F");
 	if (map->floor_color == -1)
 	{
