@@ -22,12 +22,18 @@ SRCS = srcs/main.c \
 	srcs/parsing/get_file_data.c \
 	srcs/parsing/get_swords.c \
 	srcs/parsing/set_rgb_and_heights.c \
+	srcs/parsing/parse_file.c \
+	srcs/validate/validate_elements.c \
+	srcs/validate/validate_map.c \
+	srcs/validate/validate_map_grid.c \
+	srcs/engine/player/player_init.c \
+	srcs/engine/player/player_movement.c \
+	srcs/engine/player/player_rotation.c \
+	srcs/engine/events.c \
 	srcs/utils/free_all.c \
 	srcs/utils/get_color.c \
 	srcs/utils/print_error.c \
-	srcs/validate/validate_elements.c \
-	srcs/validate/validate_map.c \
-	srcs/validate/validate_map_grid.c
+	srcs/utils/cleanup.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -62,8 +68,6 @@ fclean: clean
 	@rm -f $(NAME)
 	@echo "Fcleaning libft..."
 	@$(MAKE) -C $(LIBFT_DIR) fclean
-	# MLX'in kendi 'clean' kuralı zaten libmlx.a'yı siliyor,
-	# bu yüzden fclean için ek bir komuta gerek yok.
 
 re: fclean all
 

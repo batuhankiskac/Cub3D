@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/12 18:02:12 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/16 14:36:59 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,11 @@ int		validate_map(t_map *map);
 /*
 ** Parser
 */
+int		parse_file(t_cub3d *cub3d, char *filename);
 char	**get_swords(char **words, char *word);
 char	**get_file_data(char *filename);
-t_map	*get_filled_t_map(char *filename);
 void	set_rgb_and_heights(t_map *map, char **data);
+t_map	*get_filled_t_map(char *filename);
 
 /*
 ** Engine
@@ -109,6 +110,7 @@ void	set_rgb_and_heights(t_map *map, char **data);
 void	player_init(t_cub3d *cub3d);
 void	move_player(t_cub3d *cub3d, int keycode);
 void	rotate_player(t_cub3d *cub3d, int keycode);
+void	setup_hooks(t_cub3d *cub3d);
 
 /*
 ** Utils

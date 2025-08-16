@@ -6,15 +6,39 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 18:53:40 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/11 11:32:21 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/16 14:36:13 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int main(int argc, char const *argv[])
+int	render_next_frame(t_cub3d *cub3d)
 {
-	(void)argc;
-	(void)argv;
+	(void)cub3d;
+	// raycast çağrımı vs burada yapılacak
+	return (0);
+}
+
+int main(int argc, char *argv[])
+{
+	t_cub3d cub3d;
+
+	if (argc != 2)
+		return (print_error("Usage: ./cub3d <path_to_map.cub>", ERROR));
+	init_data(&cub3d);
+	if (parse_file(&cub3d, argv[1]) == ERROR)
+	{
+		cleanup(&cub3d);
+		return (ERROR);
+	}
+	if (init_mlx(&cub3d) == ERROR)
+	{
+		cleanup(&cub3d);
+		return (ERROR);
+	}
+	player_init(&cub3d);
+	setup_hooks(&cub3d);
+	mlx_loop_hook(cub3d.mlx, &render_next_frame, &cub3d);
+	mlx_loop(cub3d.mlx);
 	return (0);
 }
