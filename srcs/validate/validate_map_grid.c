@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 14:28:06 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/11 14:27:18 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/16 14:43:59 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static int	check_content(t_map *map)
 {
-	int y;
-	int x;
-	int player_count;
+	int	y;
+	int	x;
+	int	player_count;
 
 	y = -1;
 	player_count = 0;

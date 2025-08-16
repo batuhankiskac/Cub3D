@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:09:39 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/12 17:08:32 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/16 14:44:18 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static void	move_left_right(t_cub3d *cub3d, double move_speed, int dir)
 	if (cub3d->map.grid[(int)cub3d->player.pos_y][(int)new_pos_x] != '1')
 		cub3d->player.pos_x = new_pos_x;
 }
-
 
 void	move_player(t_cub3d *cub3d, int keycode)
 {

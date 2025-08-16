@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 18:53:40 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/16 14:36:13 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/16 14:44:09 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	render_next_frame(t_cub3d *cub3d)
 	return (0);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	t_cub3d cub3d;
+	t_cub3d	cub3d;
 
 	if (argc != 2)
 		return (print_error("Usage: ./cub3d <path_to_map.cub>", ERROR));
