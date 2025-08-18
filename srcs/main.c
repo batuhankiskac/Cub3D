@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 18:53:40 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/16 14:44:09 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/18 14:44:56 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	render_next_frame(t_cub3d *cub3d)
 {
-	(void)cub3d;
-	// raycast çağrımı vs burada yapılacak
+	draw_background(cub3d);
+	mlx_put_image_to_window(cub3d->mlx, cub3d->win, cub3d->img.img_ptr, 0, 0);
 	return (0);
 }
 

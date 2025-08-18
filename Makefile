@@ -30,6 +30,7 @@ SRCS = srcs/main.c \
 	srcs/engine/player/player_movement.c \
 	srcs/engine/player/player_rotation.c \
 	srcs/engine/events.c \
+	srcs/engine/background.c \
 	srcs/utils/free_all.c \
 	srcs/utils/get_color.c \
 	srcs/utils/print_error.c \

@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/16 14:36:59 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/18 14:42:44 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ t_map	*get_initialized_map(void);
 /*
 ** Delete
 */
-
 void	free_t_map(t_map *map);
 
 /*
@@ -111,6 +110,7 @@ void	player_init(t_cub3d *cub3d);
 void	move_player(t_cub3d *cub3d, int keycode);
 void	rotate_player(t_cub3d *cub3d, int keycode);
 void	setup_hooks(t_cub3d *cub3d);
+void	draw_background(t_cub3d *cub3d);
 
 /*
 ** Utils
