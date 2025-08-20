@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/20 15:15:21 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/20 19:18:23 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 # define ERROR -2
 # define WIN_WIDTH 1024
 # define WIN_HEIGHT 768
+# define FACE_EW 0;
+# define FACE_NS 1;
 
 typedef struct s_img
 {
@@ -127,6 +129,7 @@ void	move_player(t_cub3d *cub3d, int keycode);
 void	rotate_player(t_cub3d *cub3d, int keycode);
 void	setup_hooks(t_cub3d *cub3d);
 void	draw_background(t_cub3d *cub3d);
+void	ray_init(t_player *player, t_ray *ray, int x);
 
 /*
 ** Utils
