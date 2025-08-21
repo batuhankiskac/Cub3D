@@ -6,7 +6,7 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 18:14:35 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/07 07:45:28 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/21 11:58:47 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@ int	init_data(t_cub3d *cub3d)
 {
 	cub3d->mlx = NULL;
 	cub3d->win = NULL;
+	cub3d->east_img = NULL;
+	cub3d->west_img = NULL;
+	cub3d->south_img = NULL;
+	cub3d->north_img = NULL;
 	cub3d->img.img_ptr = NULL;
 	cub3d->map.grid = NULL;
 	cub3d->map.north_texture_path = NULL;

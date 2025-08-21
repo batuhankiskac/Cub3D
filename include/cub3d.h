@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/21 11:38:23 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/21 11:57:51 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,10 @@ typedef struct s_cub3d
 {
 	void		*mlx;
 	void		*win;
+	void		*east_img;
+	void		*north_img;
+	void		*south_img;
+	void		*west_img;
 	t_img		img;
 	t_map		map;
 	t_player	player;
