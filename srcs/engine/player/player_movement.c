@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:09:39 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/16 14:44:18 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/21 11:40:42 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void	move_player(t_cub3d *cub3d, int keycode)
 
 	move_speed = 0.1;
 	if (keycode == XK_w)
-		move_forward_backward(cub3d, move_speed, -1);
-	else if (keycode == XK_s)
 		move_forward_backward(cub3d, move_speed, 1);
+	else if (keycode == XK_s)
+		move_forward_backward(cub3d, move_speed, -1);
 	if (keycode == XK_a)
 		move_left_right(cub3d, move_speed, -1);
 	else if (keycode == XK_d)

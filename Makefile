@@ -29,6 +29,9 @@ SRCS = srcs/main.c \
 	srcs/engine/player/player_init.c \
 	srcs/engine/player/player_movement.c \
 	srcs/engine/player/player_rotation.c \
+	srcs/engine/raycast/perform_dda.c \
+	srcs/engine/raycast/ray_init.c \
+	srcs/engine/raycast/raycaster.c \
 	srcs/engine/events.c \
 	srcs/engine/background.c \
 	srcs/utils/free_all.c \
