@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/23 14:25:37 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/23 14:53:11 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,6 @@ void	perform_dda(t_map *map, t_ray *ray);
 void	raycaster(t_cub3d *cub3d);
 void	calculate_texture_x(t_player *player, t_ray *ray, t_img *texture);
 t_img	*get_wall_texture(t_cub3d *cub3d, t_ray *ray);
-
 
 /*
 ** Utils

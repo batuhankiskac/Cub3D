@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 18:17:23 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/23 13:35:39 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/23 14:53:51 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ static int	init_single_texture(t_cub3d *cub3d, t_img *texture, char *path)
 static int	init_textures(t_cub3d *cub3d)
 {
 	if (init_single_texture(cub3d, &cub3d->ea_img,
-		cub3d->map.east_texture_path) == ERROR)
+			cub3d->map.east_texture_path) == ERROR)
 		return (ERROR);
 	if (init_single_texture(cub3d, &cub3d->no_img,
-		cub3d->map.north_texture_path) == ERROR)
+			cub3d->map.north_texture_path) == ERROR)
 		return (ERROR);
 	if (init_single_texture(cub3d, &cub3d->so_img,
-		cub3d->map.south_texture_path) == ERROR)
+			cub3d->map.south_texture_path) == ERROR)
 		return (ERROR);
 	if (init_single_texture(cub3d, &cub3d->we_img,
-		cub3d->map.west_texture_path) == ERROR)
+			cub3d->map.west_texture_path) == ERROR)
 		return (ERROR);
 	return (0);
 }
@@ -61,4 +61,3 @@ int	init_mlx(t_cub3d *cub3d)
 		return (ERROR);
 	return (0);
 }
-

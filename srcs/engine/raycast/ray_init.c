@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 15:00:15 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/20 18:38:19 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/23 14:53:30 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ static void	calculate_step_and_side_dist(t_player *player, t_ray *ray)
 			* ray->delta_dist_y;
 	}
 }
-
 
 void	ray_init(t_player *player, t_ray *ray, int x)
 {

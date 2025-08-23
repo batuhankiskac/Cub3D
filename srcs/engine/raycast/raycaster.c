@@ -6,13 +6,13 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 10:05:09 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/23 14:31:07 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/23 14:53:33 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void calculate_wall_height(t_ray *ray, t_player *player)
+static void	calculate_wall_height(t_ray *ray, t_player *player)
 {
 	if (ray->side == FACE_EW)
 		ray->perp_wall_dist = (ray->map_x - player->pos_x

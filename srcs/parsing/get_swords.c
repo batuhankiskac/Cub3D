@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_swords.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:27:19 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/04 13:27:52 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/23 14:54:27 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "cub3d.h"
 
 static int	count_words(char **words)
 {

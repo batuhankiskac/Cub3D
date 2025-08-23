@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_file_data.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 06:35:11 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/11 07:44:19 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/23 14:54:23 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "cub3d.h"
 
 static int	is_extension_true(char *filename)
 {

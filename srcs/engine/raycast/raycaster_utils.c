@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 11:49:34 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/23 14:24:45 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/23 14:53:18 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	calculate_texture_x(t_player *player, t_ray *ray, t_img *texture)
 		|| (ray->side == FACE_NS && ray->ray_dir_y > 0))
 		ray->tex_x = texture->width - ray->tex_x - 1;
 }
-
 
 int	get_texture_color(t_img *texture, int x, int y)
 {

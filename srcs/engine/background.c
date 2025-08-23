@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 14:25:03 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/18 14:44:48 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/23 14:53:24 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	put_pixel_to_image(t_img *img, int x, int y, int color)
 
 void	draw_background(t_cub3d *cub3d)
 {
-	int y;
-	int x;
+	int	y;
+	int	x;
 
 	y = -1;
 	while (++y < WIN_HEIGHT / 2)
