@@ -3,41 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   init_mlx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 18:17:23 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/22 13:07:54 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/23 13:35:39 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static int	init_textures(t_cub3d *cub3d, int size)
+static int	init_single_texture(t_cub3d *cub3d, t_img *texture, char *path)
 {
-	cub3d->ea_img.img_ptr = mlx_xpm_file_to_image(cub3d->mlx,
-			cub3d->map.east_texture_path, &size, &size);
-	if (!cub3d->ea_img.img_ptr)
-		return (print_error("Failed to initialize EAST IMG PTR", ERROR));
-	cub3d->ea_img.addr = mlx_get_data_addr(cub3d->ea_img.img_ptr,
-		&cub3d->ea_img.bpp, &cub3d->ea_img.line_len, &cub3d->ea_img.endian);
-	cub3d->no_img.img_ptr = mlx_xpm_file_to_image(cub3d->mlx,
-			cub3d->map.north_texture_path, &size, &size);
-	if (!cub3d->no_img.img_ptr)
-		return (print_error("Failed to initialize NORTH IMG PTR", ERROR));
-	cub3d->no_img.addr = mlx_get_data_addr(cub3d->no_img.img_ptr,
-		&cub3d->no_img.bpp, &cub3d->no_img.line_len, &cub3d->no_img.endian);
-	cub3d->so_img.img_ptr = mlx_xpm_file_to_image(cub3d->mlx,
-			cub3d->map.south_texture_path, &size, &size);
-	if (!cub3d->so_img.img_ptr)
-		return (print_error("Failed to initialize SOUTH IMG PTR", ERROR));
-	cub3d->so_img.addr = mlx_get_data_addr(cub3d->so_img.img_ptr,
-		&cub3d->so_img.bpp, &cub3d->so_img.line_len, &cub3d->so_img.endian);
-	cub3d->we_img.img_ptr = mlx_xpm_file_to_image(cub3d->mlx,
-			cub3d->map.west_texture_path, &size, &size);
-	if (!cub3d->we_img.img_ptr)
-		return (print_error("Failed to initialize WEST IMG PTR", ERROR));
-	cub3d->we_img.addr = mlx_get_data_addr(cub3d->we_img.img_ptr,
-		&cub3d->we_img.bpp, &cub3d->we_img.line_len, &cub3d->we_img.endian);
+	texture->img_ptr = mlx_xpm_file_to_image(cub3d->mlx, path,
+			&texture->width, &texture->height);
+	if (!texture->img_ptr)
+		return (print_error("Failed to initialize texture image", ERROR));
+	texture->addr = mlx_get_data_addr(texture->img_ptr, &texture->bpp,
+			&texture->line_len, &texture->endian);
+	if (!texture->addr)
+		return (print_error("Failed to get texture data address", ERROR));
+	return (0);
+}
+
+static int	init_textures(t_cub3d *cub3d)
+{
+	if (init_single_texture(cub3d, &cub3d->ea_img,
+		cub3d->map.east_texture_path) == ERROR)
+		return (ERROR);
+	if (init_single_texture(cub3d, &cub3d->no_img,
+		cub3d->map.north_texture_path) == ERROR)
+		return (ERROR);
+	if (init_single_texture(cub3d, &cub3d->so_img,
+		cub3d->map.south_texture_path) == ERROR)
+		return (ERROR);
+	if (init_single_texture(cub3d, &cub3d->we_img,
+		cub3d->map.west_texture_path) == ERROR)
+		return (ERROR);
 	return (0);
 }
 
@@ -48,15 +49,16 @@ int	init_mlx(t_cub3d *cub3d)
 		return (print_error("Failed to initialize mlx", ERROR));
 	cub3d->win = mlx_new_window(cub3d->mlx, WIN_WIDTH, WIN_HEIGHT, "Cub3D");
 	if (!cub3d->win)
-		return (print_error("Failed to initialize mlx", ERROR));
+		return (print_error("Failed to initialize window", ERROR));
 	cub3d->img.img_ptr = mlx_new_image(cub3d->mlx, WIN_WIDTH, WIN_HEIGHT);
 	if (!cub3d->img.img_ptr)
-		return (print_error("Failed to initialize mlx", ERROR));
+		return (print_error("Failed to initialize main image", ERROR));
 	cub3d->img.addr = mlx_get_data_addr(cub3d->img.img_ptr,
 			&cub3d->img.bpp, &cub3d->img.line_len, &cub3d->img.endian);
 	if (!cub3d->img.addr)
-		return (print_error("Failed to initialize mlx", ERROR));
-	if (init_textures(cub3d, 64) == ERROR)
+		return (print_error("Failed to get main image data address", ERROR));
+	if (init_textures(cub3d) == ERROR)
 		return (ERROR);
 	return (0);
 }
+

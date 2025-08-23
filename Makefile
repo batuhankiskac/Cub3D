@@ -32,6 +32,7 @@ SRCS = srcs/main.c \
 	srcs/engine/raycast/perform_dda.c \
 	srcs/engine/raycast/ray_init.c \
 	srcs/engine/raycast/raycaster.c \
+	srcs/engine/raycast/raycaster_utils.c \
 	srcs/engine/events.c \
 	srcs/engine/background.c \
 	srcs/utils/free_all.c \

@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/23 11:44:47 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/23 14:25:37 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct s_img
 	int		bpp;
 	int		line_len;
 	int		endian;
+	int		width;
+	int		height;
 }	t_img;
 
 typedef struct s_map
@@ -133,6 +135,7 @@ t_map	*get_filled_t_map(char *filename);
 /*
 ** Engine
 */
+int		get_texture_color(t_img *texture, int x, int y);
 void	player_init(t_cub3d *cub3d);
 void	move_player(t_cub3d *cub3d, int keycode);
 void	rotate_player(t_cub3d *cub3d, int keycode);
@@ -142,6 +145,9 @@ void	draw_background(t_cub3d *cub3d);
 void	ray_init(t_player *player, t_ray *ray, int x);
 void	perform_dda(t_map *map, t_ray *ray);
 void	raycaster(t_cub3d *cub3d);
+void	calculate_texture_x(t_player *player, t_ray *ray, t_img *texture);
+t_img	*get_wall_texture(t_cub3d *cub3d, t_ray *ray);
+
 
 /*
 ** Utils

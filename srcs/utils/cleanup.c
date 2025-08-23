@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 17:42:23 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/12 17:49:05 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/23 14:36:42 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,14 @@ int	cleanup(t_cub3d *cub3d)
 	free_map_members(&cub3d->map);
 	if (cub3d->img.img_ptr)
 		mlx_destroy_image(cub3d->mlx, cub3d->img.img_ptr);
+	if (cub3d->no_img.img_ptr)
+		mlx_destroy_image(cub3d->mlx, cub3d->no_img.img_ptr);
+	if (cub3d->so_img.img_ptr)
+		mlx_destroy_image(cub3d->mlx, cub3d->so_img.img_ptr);
+	if (cub3d->we_img.img_ptr)
+		mlx_destroy_image(cub3d->mlx, cub3d->we_img.img_ptr);
+	if (cub3d->ea_img.img_ptr)
+		mlx_destroy_image(cub3d->mlx, cub3d->ea_img.img_ptr);
 	if (cub3d->win)
 		mlx_destroy_window(cub3d->mlx, cub3d->win);
 	if (cub3d->mlx)

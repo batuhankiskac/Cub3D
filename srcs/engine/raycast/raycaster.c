@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 10:05:09 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/21 11:45:42 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/08/23 14:31:07 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,22 @@ static void calculate_wall_height(t_ray *ray, t_player *player)
 
 static void	draw_slice(t_cub3d *cub3d, t_ray *ray, int x)
 {
-	int	y;
-	int	color;
+	t_img	*texture;
+	int		y;
+	int		color;
 
-	if (ray->side == FACE_NS)
-		color = 0x00FF0000;
-	else
-		color = 0x0000FF00;
-	y = ray->draw_start;
-	while (y < ray->draw_end)
+	texture = get_wall_texture(cub3d, ray);
+	calculate_texture_x(&cub3d->player, ray, texture);
+	ray->tex_step = (double)texture->height / ray->line_height;
+	ray->tex_pos = (ray->draw_start - WIN_HEIGHT / 2 + ray->line_height / 2)
+		* ray->tex_step;
+	y = ray->draw_start - 1;
+	while (++y < ray->draw_end)
 	{
+		ray->tex_y = (int)ray->tex_pos;
+		ray->tex_pos += ray->tex_step;
+		color = get_texture_color(texture, ray->tex_x, ray->tex_y);
 		put_pixel_to_image(&cub3d->img, x, y, color);
-		y++;
 	}
 }
 
