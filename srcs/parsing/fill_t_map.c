@@ -6,7 +6,7 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 07:14:27 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/11 10:58:56 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/25 07:23:20 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ static void	add_map(t_map *map, char **data)
 	i = 0;
 	while (data[i])
 	{
-		if (ft_strnstr(data[i], "111", ft_strlen(data[i])))
+		if (is_first_line_of_map(data, i))
 		{
 			while (data[i])
 			{
@@ -141,7 +141,7 @@ t_map	*get_filled_t_map(char *filename)
 		|| !map->east_texture_path || !map->west_texture_path || !map->grid)
 	{
 		free_t_map(map);
-		return (print_null("Some identifiers not found."));
+		return (NULL);
 	}
 	return (map);
 }
