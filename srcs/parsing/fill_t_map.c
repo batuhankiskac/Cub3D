@@ -6,7 +6,7 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 07:14:27 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/25 08:39:31 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/25 11:56:57 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ static void	add_map(t_map *map, char **data)
 				i++;
 			}
 		}
-		if (!data[i])
+		if (!data[i] || result)
 			break ;
 		i++;
 	}
