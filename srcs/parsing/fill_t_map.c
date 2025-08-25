@@ -101,6 +101,7 @@ static void	add_map(t_map *map, char **data)
 		{
 			while (data[i])
 			{
+			
 				result = get_swords(result, data[i]);
 				if (!result)
 					return ;
@@ -112,6 +113,10 @@ static void	add_map(t_map *map, char **data)
 		i++;
 	}
 	map->grid = get_trimmed_map(result);
+	for (int i = 0; map->grid[i]; i++)
+	{
+		printf(".%s.\n", map->grid[i]);
+	}
 	if (!map->grid)
 		print_null("No map in .cub file.");
 	free_all(result);

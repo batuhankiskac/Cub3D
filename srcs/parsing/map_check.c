@@ -33,6 +33,8 @@ int	is_first_line_of_map(char **data, int i)
 {
 	if (!data || i < 0)
 		return (0);
+	if (ft_strlen(data[i]) <= 1)
+		return (0);
 	while (data[i])
 	{
 		if (!check_line_elements(data[i]))
