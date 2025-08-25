@@ -6,7 +6,7 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 07:14:27 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/25 07:23:20 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/25 08:39:31 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ static void	fill(t_map *map, char **data)
 						ft_strlen(data[i])) + 2);
 		i++;
 	}
+	if (!map->north_texture_path || !map->south_texture_path
+		|| !map->east_texture_path || !map->west_texture_path)
+		ft_putendl_fd("Error\ncub3D: Some texture ways couldn't find.", 2);
 }
 
 static void	set_trimmed_ways(t_map *map)
@@ -99,12 +102,11 @@ static void	add_map(t_map *map, char **data)
 	{
 		if (is_first_line_of_map(data, i))
 		{
-			while (data[i])
+			while (data[i] && data[i][0] != '\n')
 			{
-			
 				result = get_swords(result, data[i]);
 				if (!result)
-					return ;
+					break ;
 				i++;
 			}
 		}
@@ -113,10 +115,6 @@ static void	add_map(t_map *map, char **data)
 		i++;
 	}
 	map->grid = get_trimmed_map(result);
-	for (int i = 0; map->grid[i]; i++)
-	{
-		printf(".%s.\n", map->grid[i]);
-	}
 	if (!map->grid)
 		print_null("No map in .cub file.");
 	free_all(result);
@@ -134,7 +132,7 @@ t_map	*get_filled_t_map(char *filename)
 	if (!data)
 	{
 		free(map);
-		return (print_null("No .cub file or file could not read"));
+		return (NULL);
 	}
 	fill(map, data);
 	set_trimmed_ways(map);
