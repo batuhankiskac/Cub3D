@@ -6,17 +6,19 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 07:14:27 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/26 06:56:37 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/26 07:22:53 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void	fill(t_map *map, char **data)
+static void	*fill(t_map *map, char **data)
 {
 	int		i;
 
 	i = 0;
+	if (check_textures(data))
+		return (print_null("All identifiers must be single."));
 	while (data[i])
 	{
 		if (ft_strnstr(data[i], "NO", ft_strlen(data[i])))
@@ -35,7 +37,8 @@ static void	fill(t_map *map, char **data)
 	}
 	if (!map->north_texture_path || !map->south_texture_path
 		|| !map->east_texture_path || !map->west_texture_path)
-		ft_putendl_fd("Error\ncub3D: Some texture ways couldn't find.", 2);
+		return (print_null("Error\ncub3D: Some texture ways couldn't find."));
+	return (NULL);
 }
 
 static void	set_trimmed_ways(t_map *map)

@@ -6,7 +6,7 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/25 07:16:19 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/26 07:17:36 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,7 @@ char	**get_file_data(char *filename);
 void	set_rgb_and_heights(t_map *map, char **data);
 t_map	*get_filled_t_map(char *filename);
 int		is_first_line_of_map(char **data, int i);
+int		check_textures(char **data);
 
 /*
 ** Engine
