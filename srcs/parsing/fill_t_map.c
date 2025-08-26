@@ -6,7 +6,7 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 07:14:27 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/08/25 11:56:57 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/08/26 06:56:37 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ static void	add_map(t_map *map, char **data)
 	{
 		if (is_first_line_of_map(data, i))
 		{
-			while (data[i] && data[i][0] != '\n')
+			while (data[i])
 			{
 				result = get_swords(result, data[i]);
 				if (!result)
@@ -110,7 +110,7 @@ static void	add_map(t_map *map, char **data)
 				i++;
 			}
 		}
-		if (!data[i] || result)
+		if (!data[i])
 			break ;
 		i++;
 	}
