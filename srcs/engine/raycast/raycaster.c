@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 10:05:09 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/23 14:53:33 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/10/11 20:34:22 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 static void	calculate_wall_height(t_ray *ray, t_player *player)
 {
 	if (ray->side == FACE_EW)
-		ray->perp_wall_dist = (ray->map_x - player->pos_x
-				+ (1 - ray->step_x) / 2) / ray->ray_dir_x;
+		ray->perp_wall_dist = ray->side_dist_x - ray->delta_dist_x;
 	else
-		ray->perp_wall_dist = (ray->map_y - player->pos_y
-				+ (1 - ray->step_y) / 2) / ray->ray_dir_y;
+		ray->perp_wall_dist = ray->side_dist_y - ray->delta_dist_y;
 	ray->line_height = (int)(WIN_HEIGHT / ray->perp_wall_dist);
 	ray->draw_start = (WIN_HEIGHT / 2) - (ray->line_height / 2);
 	if (ray->draw_start < 0)

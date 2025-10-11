@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 15:00:15 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/23 14:53:30 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/10/11 21:02:40 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	calculate_step_and_side_dist(t_player *player, t_ray *ray)
 	else
 	{
 		ray->step_x = 1;
-		ray->side_dist_x = (ray->map_x + 1.0 - player->pos_x) \
+		ray->side_dist_x = (ray->map_x + 1.0 - player->pos_x)
 			* ray->delta_dist_x;
 	}
 	if (ray->ray_dir_y < 0)
@@ -45,7 +45,7 @@ static void	calculate_step_and_side_dist(t_player *player, t_ray *ray)
 	else
 	{
 		ray->step_y = 1;
-		ray->side_dist_y = (ray->map_y + 1.0 - player->pos_y) \
+		ray->side_dist_y = (ray->map_y + 1.0 - player->pos_y)
 			* ray->delta_dist_y;
 	}
 }
