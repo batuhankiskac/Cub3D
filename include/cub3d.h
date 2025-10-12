@@ -26,8 +26,8 @@
 # include <errno.h>
 
 # define ERROR -2
-# define WIN_WIDTH 1024
-# define WIN_HEIGHT 768
+# define WIN_WIDTH 2560
+# define WIN_HEIGHT 1440
 # define FACE_EW 0
 # define FACE_NS 1
 

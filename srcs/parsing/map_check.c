@@ -30,10 +30,10 @@ int	is_first_line_of_map(char **data, int i)
 
 int	check_textures(char **data)
 {
-	int	i;
-	int	num;
+	int			i;
+	int			num;
 	const char	*values[] = {"NO", "EA", "WE", "SO", "F", "C", NULL};
-	int	flag;
+	int			flag;
 
 	i = 0;
 	while (values[i])

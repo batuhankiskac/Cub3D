@@ -12,7 +12,7 @@
 
 #include "cub3d.h"
 
-static void	calculate_wall_height(t_ray *ray, t_player *player)
+static void	calculate_wall_height(t_ray *ray)
 {
 	if (ray->side == FACE_EW)
 		ray->perp_wall_dist = ray->side_dist_x - ray->delta_dist_x;
@@ -58,7 +58,7 @@ void	raycaster(t_cub3d *cub3d)
 	{
 		ray_init(&cub3d->player, &ray, x);
 		perform_dda(&cub3d->map, &ray);
-		calculate_wall_height(&ray, &cub3d->player);
+		calculate_wall_height(&ray);
 		draw_slice(cub3d, &ray, x);
 	}
 }
