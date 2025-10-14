@@ -6,18 +6,24 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 10:05:09 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/10/11 20:34:22 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/10/14 22:22:30 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void	calculate_wall_height(t_ray *ray)
+static void	calculate_wall_height(t_ray *ray, t_player *player)
 {
+	double	euclidean_dist;
+
 	if (ray->side == FACE_EW)
-		ray->perp_wall_dist = ray->side_dist_x - ray->delta_dist_x;
+		euclidean_dist = ray->side_dist_x - ray->delta_dist_x;
 	else
-		ray->perp_wall_dist = ray->side_dist_y - ray->delta_dist_y;
+		euclidean_dist = ray->side_dist_y - ray->delta_dist_y;
+	if (ray->perp_wall_dist <= 0)
+		ray->perp_wall_dist = 1e30;
+	ray->perp_wall_dist = (euclidean_dist * ray->ray_dir_x) * player->dir_x
+							+ (euclidean_dist * ray->ray_dir_y) * player->dir_y;
 	ray->line_height = (int)(WIN_HEIGHT / ray->perp_wall_dist);
 	ray->draw_start = (WIN_HEIGHT / 2) - (ray->line_height / 2);
 	if (ray->draw_start < 0)
@@ -58,7 +64,7 @@ void	raycaster(t_cub3d *cub3d)
 	{
 		ray_init(&cub3d->player, &ray, x);
 		perform_dda(&cub3d->map, &ray);
-		calculate_wall_height(&ray);
+		calculate_wall_height(&ray, &cub3d->player);
 		draw_slice(cub3d, &ray, x);
 	}
 }
