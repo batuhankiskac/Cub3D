@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 14:28:06 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/16 14:43:59 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/10/14 22:38:39 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ static void	find_player_start(char **grid, int *x, int *y)
 
 static int	flood_fill(char **grid, int y, int x, int height)
 {
-	if (y < 0 || y >= height || x < 0 || !grid[y][x] || grid[y][x] == ' ')
+	if (y < 0 || y >= height || x < 0 || x >= (int)ft_strlen(grid[y]))
 		return (print_error("Map is not closed", ERROR));
-	if (grid[y][x] == '1' || grid[y][x] == 'F')
+	if (grid[y][x] == '1' || grid[y][x] == 'F' || grid[y][x] == ' ')
 		return (0);
 	grid[y][x] = 'F';
 	if (flood_fill(grid, y + 1, x, height) == ERROR)
@@ -102,6 +102,8 @@ int	validate_map_grid(t_map *map)
 	if (!map->grid || !map->grid[0])
 		return (print_error("Map grid not found", ERROR));
 	if (check_content(map) == ERROR)
+		return (ERROR);
+	if (check_perimeter(map) == ERROR)
 		return (ERROR);
 	if (execute_fill(map) == ERROR)
 		return (ERROR);

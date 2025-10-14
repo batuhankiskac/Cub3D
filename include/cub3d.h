@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/26 07:17:36 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/10/14 22:35:50 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ void	free_t_map(t_map *map);
 /*
 ** Validate
 */
+int		check_perimeter(t_map *map);
 int		validate_map_grid(t_map *map);
 int		validate_elements(t_map *map);
 int		validate_map(t_map *map);
