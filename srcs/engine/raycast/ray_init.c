@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 15:00:15 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/10/11 21:02:40 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/10/19 18:41:29 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	ray_init(t_player *player, t_ray *ray, int x)
 	ray->map_x = (int)player->pos_x;
 	ray->map_y = (int)player->pos_y;
 	ray->hit = 0;
+	ray->perp_wall_dist = 0.0;
 	calculate_delta_dist(ray);
 	calculate_step_and_side_dist(player, ray);
 }
