@@ -6,13 +6,13 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 22:27:24 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/10/14 22:35:20 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/10/19 15:54:42 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static int is_exposed(t_map *map, int y, int x)
+static int	is_exposed(t_map *map, int y, int x)
 {
 	if (y == 0 || y == map->map_height - 1 || x == 0)
 		return (1);
