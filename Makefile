@@ -18,12 +18,14 @@ SRCS = srcs/main.c \
 	srcs/init/data_init.c \
 	srcs/init/delete.c \
 	srcs/init/init_mlx.c \
+	srcs/parsing/check_rgb.c \
 	srcs/parsing/fill_t_map.c \
 	srcs/parsing/get_file_data.c \
 	srcs/parsing/get_swords.c \
 	srcs/parsing/map_check.c \
 	srcs/parsing/set_rgb_and_heights.c \
 	srcs/parsing/parse_file.c \
+	srcs/validate/check_perimeter.c \
 	srcs/validate/validate_elements.c \
 	srcs/validate/validate_map.c \
 	srcs/validate/validate_map_grid.c \
