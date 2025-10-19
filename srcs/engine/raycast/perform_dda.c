@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 19:10:04 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/08/20 19:23:08 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/10/19 18:35:05 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ void	perform_dda(t_map *map, t_ray *ray)
 			ray->side_dist_y += ray->delta_dist_y;
 			ray->map_y += ray->step_y;
 			ray->side = FACE_NS;
+		}
+		if (ray->map_x < 0 || ray->map_x >= map->map_width ||
+			ray->map_y < 0 || ray->map_y >= map->map_height)
+		{
+			ray->hit = 1;
+			break;
 		}
 		if (map->grid[ray->map_y][ray->map_x] == '1')
 			ray->hit = 1;

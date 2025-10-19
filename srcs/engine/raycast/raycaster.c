@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 10:05:09 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/10/19 15:55:55 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/10/19 18:35:57 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	raycaster(t_cub3d *cub3d)
 	x = -1;
 	while (++x < WIN_WIDTH)
 	{
+		ft_bzero(&ray, sizeof(t_ray));
 		ray_init(&cub3d->player, &ray, x);
 		perform_dda(&cub3d->map, &ray);
 		calculate_wall_height(&ray, &cub3d->player);
