@@ -6,11 +6,37 @@
 /*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 23:19:34 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/10/19 11:36:52 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/10/22 13:26:02 by raydogmu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+static int	check_reqs(const char *s)
+{
+	int	count_comma;
+	int	i;
+	int	count_others;
+
+	i = 0;
+	count_comma = 0;
+	count_others = 0;
+	if (!s)
+		return (1);
+	while (s[i])
+	{
+		if (s[i] == ',')
+			count_comma++;
+		else if (s[i] != ' ' && !(s[i] >= '0' && s[i] <= '9'))
+			count_others++;
+		i++;
+	}
+	if (count_comma != 2)
+		return (print_error("Too many comma.", 1));
+	else if (count_others > 0)
+		return (print_error("Colors only include comma, F or C or numbers.", 1));
+	return (0);	
+}
 
 static char	**edit_blanks(char *s)
 {
@@ -18,7 +44,7 @@ static char	**edit_blanks(char *s)
 	char	*line;
 	int		i;
 
-	if (!s)
+	if (check_reqs(s))
 		return (NULL);
 	elements = ft_split(s, ',');
 	i = 0;
