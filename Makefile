@@ -25,6 +25,7 @@ SRCS = srcs/main.c \
 	srcs/parsing/map_check.c \
 	srcs/parsing/set_rgb_and_heights.c \
 	srcs/parsing/parse_file.c \
+	srcs/parsing/check_double_map.c \
 	srcs/validate/check_perimeter.c \
 	srcs/validate/validate_elements.c \
 	srcs/validate/validate_map.c \
