@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 21:23:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/10/28 14:36:01 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/10/28 21:07:39 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,6 @@ t_map	*get_filled_t_map(char *filename);
 int		is_first_line_of_map(char **data, int i);
 int		check_textures(char **data);
 char	*get_rgb_string(const char *s);
-int		check_double_map(char **map);
 
 /*
 ** Engine

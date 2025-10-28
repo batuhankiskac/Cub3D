@@ -20,7 +20,6 @@ int	parse_file(t_cub3d *cub3d, char *filename)
 	if (!temp)
 		return (ERROR);
 	cub3d->map = *temp;
-	check_double_map(temp->grid);
 	free(temp);
 	if (validate_map(&cub3d->map) == ERROR)
 		return (ERROR);
