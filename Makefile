@@ -82,4 +82,15 @@ re: fclean all
 norm:
 	@norminette srcs include libft
 
-.PHONY: all clean fclean re
+docker:
+	@docker run -it --rm \
+		-e DISPLAY=$(DISPLAY) \
+		-v /tmp/.X11-unix:/tmp/.X11-unix \
+		-v "$(CURDIR)":/usr/src/myapp \
+		-w /usr/src/myapp \
+		ubuntu:latest /bin/bash -c '\
+		apt update -qq > /dev/null && \
+		apt install -y -qq build-essential libx11-dev libxext-dev libbsd-dev xorg > /dev/null \
+		'
+
+.PHONY: all clean fclean re norm docker
