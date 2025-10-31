@@ -87,10 +87,7 @@ docker:
 		-e DISPLAY=$(DISPLAY) \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
 		-v "$(CURDIR)":/usr/src/myapp \
-		-w /usr/src/myapp \
-		ubuntu:latest /bin/bash -c '\
-		apt update -qq > /dev/null && \
-		apt install -y -qq build-essential libx11-dev libxext-dev libbsd-dev xorg > /dev/null \
+		cub3d_dev /bin/bash
 		'
 
 .PHONY: all clean fclean re norm docker
