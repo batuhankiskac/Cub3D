@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_rgb.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raydogmu <raydogmu@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 23:19:34 by raydogmu          #+#    #+#             */
-/*   Updated: 2025/10/22 13:26:02 by raydogmu         ###   ########.fr       */
+/*   Updated: 2025/11/02 12:34:45 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static int	check_reqs(const char *s)
 	if (count_comma != 2)
 		return (print_error("Too many comma.", 1));
 	else if (count_others > 0)
-		return (print_error("Colors only include comma, F or C or numbers.", 1));
-	return (0);	
+		return (print_error("Colors only include comma, F, C or numbers.", 1));
+	return (0);
 }
 
 static char	**edit_blanks(char *s)
