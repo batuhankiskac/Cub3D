@@ -82,12 +82,4 @@ re: fclean all
 norm:
 	@norminette srcs include libft
 
-docker:
-	@docker run -it --rm \
-		-e DISPLAY=$(DISPLAY) \
-		-v /tmp/.X11-unix:/tmp/.X11-unix \
-		-v "$(CURDIR)":/usr/src/myapp \
-		cub3d_dev /bin/bash
-		'
-
-.PHONY: all clean fclean re norm docker
+.PHONY: all clean fclean re norm
